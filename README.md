@@ -1,1 +1,1 @@
-`duckdb` 🦆 POC to explore SQL interface in Python for single-node computations - [link](https://github.com/saketh9977/python/tree/main/duckdb#readme)
+`duckdb` 🦆 PoC to explore SQL interface in Python for single-node computations - [link](https://github.com/saketh9977/python/tree/main/duckdb#readme)
