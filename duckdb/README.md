@@ -20,3 +20,4 @@
 4. Didn't test joins but `duckdb` [supports](https://duckdb.org/docs/sql/query_syntax/from.html#joins) Joins.
 5. Aggregations, group-by, describing a table etc. are tested
 
+Scroll Up 👆 for code.
