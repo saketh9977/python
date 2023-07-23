@@ -1,5 +1,5 @@
 ### Purpose
-Provide a <u>secured</u> REST API interface on top of a dataset 
+A PoC to provide a <u>secured</u> REST API interface on top of a dataset 
 
 ### Dataset
 1. Zomato Restaurants in India 🇮🇳: [link](https://www.kaggle.com/datasets/narsingraogoud/zomato-restaurants-dataset-for-metropolitan-areas)
@@ -40,9 +40,10 @@ Provide a <u>secured</u> REST API interface on top of a dataset
 3. At this point, user is logged-in & can provide JWT-temporary-access-token in subsequent request-headers instead of username & password in every request. 
 4. Imagine 2 scenarios - 1. username & password getting compromised & 2. JWT-temporary-access-token getting compromised. The 2nd scenario in better than the 1st one as JWT-temporary-access-token is temporary & may have already been expired by the time it gets into bad hands. On the other hand, username & password are permanent, unless user changes password.
 5. When a user wants to access secure API endpoint, the request-headers should contain JWT-temporary-access-token
-6. To verify if a JWT-temporary-access-token is valid, we extract original payload by applying the same symmetric key & the same `HS256` algorithm
+6. To verify if a JWT-temporary-access-token is valid, we extract original payload by using the same symmetric key & the same `HS256` algorithm
     - Input: JWT-temporary-access-token & symmetric key
     - Output: payload containing username, token expiry timestamp
+7. A user is logged-out when JWT-temporary-access-token is expired. To login again, a user has to provide credentials (step-1) to generate another temporary JWT-temporary-access-token (step-2)
 
 ### Why `bcrypt` why not `SHA-256` for password hashing?
 1. `bcrypt` performs salting which helps us defend against rainbow attacks
