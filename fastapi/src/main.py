@@ -1,7 +1,5 @@
 from helper import get_dish_details
 
-import pprint
-
 from fastapi import FastAPI
 
 app = FastAPI()
